@@ -7,13 +7,13 @@ output:
 
 ### Telecharger les données
 
-```{r, echo=FALSE}
+```{r, include=FALSE}
 library(readxl)
 data=read_excel("C:/Users/DELL/Videos/Travail_connection_git_Rstudio/flexdashboard/data.xlsx");data
 ```
 
 
-```{r, echo=FALSE}
+```{r, include=TRUE}
 summary(data)
 data.ts=ts(data[,2], start=c(2005,1), end=c(2022,12), f=12);data.ts
 summary(data.ts)
