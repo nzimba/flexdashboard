@@ -1,40 +1,48 @@
 ---
-title: "Multiple Pages"
+title: "Scébarios-boards"
 output: 
   flexdashboard::flex_dashboard:
+    storyboard: true
 ---
 
-```{r setup, include=FALSE}
-library(flexdashboard)
-```
-
-Visualisations {data-icon="fa-signal"}
-=====================================
-
-### Chart 1
+### Telecharger les données
 
 ```{r}
-
+library(readxl)
 ```
 
-### Chart 2
 
 ```{r}
-
+data=read_excel("C:/Users/DELL/Videos/Travail_connection_git_Rstudio/flexdashboard/data.xlsx");data
+names(data)
+summary(data)
+data.ts=ts(data[,2], start=c(2005,1), end=c(2022,12), f=12);data.ts
+summary(data.ts)
 ```
 
 
-Tables {data-icon="fa-table"}
-=====================================
-### Table 1
+### A nice scatterplot here
 
 ```{r}
+plot(data.ts, pch=20)
+grid()
 
 ```
 
-### Table 2
+
+------
+
+
+Some commentary about Frame 1.
+
+
+
+### A beautiful histogram on this board 
 
 ```{r}
+hist(data$Recettes, col= 'gray', board = 'white', main= '')
 
 ```
+
+---
 
