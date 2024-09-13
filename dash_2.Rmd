@@ -1,34 +1,38 @@
 ---
-title: "Untitled"
+title: "Multiple Pages"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
 ---
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
 ```
 
-Column {data-width=650}
------------------------------------------------------------------------
+Visualisations {data-icon="fa-signal"}
+=====================================
 
-### Chart A
-
-```{r}
-
-```
-
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart B
+### Chart 1
 
 ```{r}
 
 ```
 
-### Chart C
+### Chart 2
+
+```{r}
+
+```
+
+
+Tables {data-icon="fa-table"}
+=====================================
+### Table 1
+
+```{r}
+
+```
+
+### Table 2
 
 ```{r}
 
