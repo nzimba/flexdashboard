@@ -5,7 +5,7 @@ output:
     storyboard: true
 ---
 
-### Telecharger les données
+### Présentation de la série chronologique 
 
 ```{r, include=FALSE}
 library(readxl)
@@ -14,16 +14,30 @@ data=read_excel("C:/Users/DELL/Videos/Travail_connection_git_Rstudio/flexdashboa
 
 
 ```{r, include=TRUE}
-summary(data)
 data.ts=ts(data[,2], start=c(2005,1), end=c(2022,12), f=12);data.ts
 summary(data.ts)
 ```
 
+```{r, include=FALSE}
+logdata.ts=log(data.ts)
 
-### A nice scatterplot here
+```
+
+### Visualisation des données brutes des recettes non fiscales
+
+**visualisation** des données avec la transformation *logarithmique*
 
 ```{r}
-plot(data.ts, pch=20)
+plot(data.ts, col="red")
+grid()
+
+```
+
+### Visualisation des données en Transformation logaraithmiques des recettes non fiscales
+
+
+```{r}
+plot(logdata.ts, pch=20, col="blue")
 grid()
 
 ```
@@ -31,15 +45,10 @@ grid()
 
 ------
 
-
-Some commentary about Frame 1.
-
-
-
-### A beautiful histogram on this board 
+### Evolution des recettes en fonction des mois
 
 ```{r}
-hist(data$Recettes, col= 'gray', board = 'white', main= '')
+monthplot(logdata.ts, col= 'gray', board = 'white', main= '')
 
 ```
 
